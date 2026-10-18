@@ -1,0 +1,8 @@
+control,status,evidence,limitation
+C1 - MFA Root,NOT_TESTABLE,Moto ne représente pas fidèlement la configuration de sécurité Root.,À vérifier dans un vrai compte AWS.
+C2 - Absence de clés Root,NOT_TESTABLE,Les clés d'accès Root réelles ne sont pas accessibles dans ce laboratoire.,À vérifier dans un vrai compte AWS.
+C3 - Administrateur IAM de test,PASS,audit-admin existe et possède la politique AdministratorAccess simulée.,
+C4 - MFA de l'utilisateur IAM,PASS,1 dispositif(s) MFA associé(s) dans Moto.,
+C5 - Longueur minimale du mot de passe,PASS,Minimum configuré : 14 caractères ; objectif : 14.,
+C6 - Blocage public du bucket S3,PASS,Les quatre options de blocage public sont activées.,
+C7 - Blocage public S3 au niveau du compte,NOT_TESTABLE,Ce test de bucket ne prouve pas le paramétrage S3 Control au niveau du compte.,Vérification réelle requise dans un compte AWS.

@@ -1,0 +1,54 @@
+{
+  "project": "AWS Security Audit Lab",
+  "environment": "Moto local - simulation",
+  "timestamp_utc": "2026-10-18T19:48:39.755608+00:00",
+  "checks": [
+    {
+      "control": "C1 - MFA Root",
+      "status": "NOT_TESTABLE",
+      "evidence": "Moto ne représente pas fidèlement la configuration de sécurité Root.",
+      "limitation": "À vérifier dans un vrai compte AWS."
+    },
+    {
+      "control": "C2 - Absence de clés Root",
+      "status": "NOT_TESTABLE",
+      "evidence": "Les clés d'accès Root réelles ne sont pas accessibles dans ce laboratoire.",
+      "limitation": "À vérifier dans un vrai compte AWS."
+    },
+    {
+      "control": "C3 - Administrateur IAM de test",
+      "status": "PASS",
+      "evidence": "audit-admin existe et possède la politique AdministratorAccess simulée.",
+      "limitation": ""
+    },
+    {
+      "control": "C4 - MFA de l'utilisateur IAM",
+      "status": "FAIL",
+      "evidence": "Aucun dispositif MFA associé à l'utilisateur de test.",
+      "limitation": ""
+    },
+    {
+      "control": "C5 - Longueur minimale du mot de passe",
+      "status": "FAIL",
+      "evidence": "Minimum configuré : 8 caractères ; objectif : 14.",
+      "limitation": ""
+    },
+    {
+      "control": "C6 - Blocage public du bucket S3",
+      "status": "FAIL",
+      "evidence": "Aucun blocage vérifiable : NoSuchPublicAccessBlockConfiguration",
+      "limitation": ""
+    },
+    {
+      "control": "C7 - Blocage public S3 au niveau du compte",
+      "status": "NOT_TESTABLE",
+      "evidence": "Ce test de bucket ne prouve pas le paramétrage S3 Control au niveau du compte.",
+      "limitation": "Vérification réelle requise dans un compte AWS."
+    }
+  ],
+  "summary": {
+    "PASS": 1,
+    "FAIL": 3,
+    "NOT_TESTABLE": 3
+  }
+}
